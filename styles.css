@@ -48,6 +48,9 @@ SISTEMA DE GRIDS
 	display: block;
 	float: left;
 }
+.float-right{
+	float: right;
+}
 .content{
 	max-width: 1280px;
 	margin:0 auto;
@@ -72,8 +75,7 @@ MENU PADRÃO
 }
 .box-menu ul{
 	display: block;
-	float: left;
-	width: 100%;
+	float: right;
 	padding: 15px 0 0;
 }
 .box-menu li{
@@ -229,6 +231,82 @@ BOX E FORMATAÇÃO DE FORMULÁRIOS
 }
 
 /*----------------------------------------------------
+BOX VIEW PRODUTOS
+------------------------------------------------------
+*/
+.box-prod{
+	display: block;
+	float: left;
+	background: #fff
+}
+.box-prod .box-prod-header{
+	background: #E3B74D
+}
+
+.box-prod .box-prod-header.box-prod-info{
+	background: #4990AB
+}
+.box-prod .box-prod-header.box-prod-success{
+	background: #61BDA6
+}
+.box-prod .box-prod-header.box-prod-alert{
+	background: #E3B74D
+}
+.box-prod .box-prod-header.box-prod-danger{
+	background: #CB5B55
+}
+
+.box-prod .title{
+	padding: 15px 15px 0 15px;
+	display: block;
+	float: left;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 2px;
+	font-size: 1.6em
+}
+.box-prod .box-category{
+	padding: 0 15px 15px 15px;
+	text-transform: uppercase;
+	color: #fff;
+	float: left;
+}
+.box-prod .box-category span,
+.box-prod .box-tag span{
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.box-prod .box-tag{
+}
+.box-prod .box-tag span{
+	display: block;
+	float: left;
+	padding: 15px 45px 15px 15px;
+	margin-top: 45px;
+	background: rgba(5, 5, 5, 0.35)
+}
+.box-prod .box-data{
+	.display: block;
+	float: left;
+	width: 100%;
+	padding: 5px 15px;
+}
+.box-prod .box-data span{
+	font-weight: bold;
+}
+.box-prod .box-control .btn{
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+
+
+/*----------------------------------------------------
 FOOTER DEFAULT
 ------------------------------------------------------
 */
@@ -250,6 +328,20 @@ MEDIA QUERIES
 
 @media all and (max-width: 1024px){
 	*[class^=box-size]{
+		width: calc(100% - 30px);
+	}
+	.box-prod{
+		width: calc(50% - 30px);
+	}
+	.box-dashboard .box-info{
+		width: calc(50% - 30px);
+	}
+}
+@media all and (max-width: 768px){
+	.box-prod{
+		width: calc(100% - 30px);
+	}
+	.box-dashboard .box-info{
 		width: calc(100% - 30px);
 	}
 }

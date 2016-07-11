@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,85 +17,26 @@
 			</div>
 			<div class="box-size-75 box-menu">
 				<ul>
-					<li><a href="" class="active">Um link qui</a></li>
-					<li><a href="">Um link qui</a></li>
-					<li><a href="">Um link qui</a></li>
-					<li><a href="">Um link qui</a></li>
-					<li><a href="">Um link qui</a></li>
-					<li><a href="">Um link qui</a></li>
+					<li><a href="#/dashboard" ng-init="nav = 1" ng-class="{'active' : nav == 1}" ng-click="nav = 1">Dashboard</a></li>
+					<li><a href="#/produtos" ng-class="{'active' : nav == 2}" ng-click="nav = 2">Produtos</a></li>
+					<li><a href="#/cadastro" ng-class="{'active' : nav == 3}" ng-click="nav = 3">Cadastro</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
 
-	<div class="box-size-100">
-		<div class="box-size-25 box-info">
-			<h1 class="title title-notice">Usuários online agora</h1>
-			<div class="box-size-100 margin-none padding none">
-				<b>Agora: </b> 38
-			</div>
-			<div class="box-full-width padding-none margin-none">
-				<a href="#" class="btn btn-info">Seguir usuário</a>
-			</div>
-		</div>
-		<div class="box-size-25 box-info">
-			<h1 class="title title-success">Usuários online na semana</h1>
-			<div class="box-size-100 margin-none">
-				<b>Na semana: </b> 380
-			</div>
-			<div class="box-full-width padding-none margin-none">
-				<a href="#" class="btn btn-success">Páginas mais visitadas</a>
-			</div>
-		</div>
-		<div class="box-size-25 box-info">
-			<h1 class="title title-alert">Usuários online no mês</h1>
-			<div class="box-size-100 margin-none">
-				<b>Na mês: </b> 1280
-			</div>
-			<div class="box-full-width padding-none margin-none">
-				<a href="#" class="btn btn-alert">Páginas mais visitadas</a>
-			</div>
-		</div>
-		<div class="box-size-25 box-info">
-			<h1 class="title title-danger">Usuários online no mês</h1>
-			<div class="box-size-100 margin-none">
-				<b>Na mês: </b> 1280
-			</div>
-			<div class="box-full-width padding-none margin-none">
-				<a href="#" class="btn btn-danger">Páginas mais visitadas</a>
-			</div>
-		</div>
-	</div>
-	<div class="box-size-100">
-		<form class="box-size-100 box-form">
-			<label class="box-size-25 padding-none margin-top margin-bottom">
-				<span>Um título</span>
-				<input type="text">
-			</label>			
-			<label class="box-size-25 padding-none margin-top margin-bottom">
-				<span>Um título</span>
-				<input type="email">
-			</label>			
-			<label class="box-size-25 padding-none margin-top margin-bottom">
-				<span>Um título</span>
-				<input type="tel">
-			</label>			
-			<label class="box-size-25 padding-none margin-top margin-bottom">
-				<span>Um título</span>
-				<input type="password">
-			</label>
-			<label class="box-size-100 padding-none margin-top margin-bottom">
-				<span>Um título</span>
-				<textarea></textarea>
-			</label>
-			<div class="box-size-100 padding-left-none padding-right-none">
-				<a href="#" class="btn btn-danger">Páginas mais visitadas</a>
-			</div>
-		</form>
-	</div>
+	<ng-view></ng-view>
+	
 	<div class="box-size-100 padding-left-none padding-right-none box-footer">
 		&copy 2016 - <span>	DevMean Treinamentos Online</span> - Todos os direitos reservados.
 	</div>
+
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="controllers/dashboardCtrl.js"></script>
+	<script src="controllers/produtosCtrl.js"></script>
+	<script src="controllers/cadastroCtrl.js"></script>
 </body>
 </html>
